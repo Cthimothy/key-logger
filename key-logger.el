@@ -1,8 +1,8 @@
-(defun my-keylog-toggle ()
+(defun tw/keylog-toggle ()
   "Toggle key logging with timestamps. Ignoring mouse events."
   (interactive)
   (let* ((buffer-name "*Key Log*")
-         (hook-symbol 'my-keylog--log-command-hook))
+         (hook-symbol 'tw/keylog--log-command-hook))
     (unless (fboundp hook-symbol)
       (fset hook-symbol
             (lambda ()
