@@ -1,7 +1,7 @@
-(defun my-keylog-toggle ()
+(defun tw/keylog-toggle ()
   "Toggle key logging with timestamps. Only logs keys starting with C- or M-, ignoring mouse events."
   (interactive)
-  (let* ((hook-symbol 'my-keylog--log-command-hook))
+  (let* ((hook-symbol 'tw/keylog--log-command-hook))
     (unless (fboundp hook-symbol)
       (fset hook-symbol
             (lambda ()
@@ -13,7 +13,6 @@
                             (string-match-p "<triple-" keys)
                             (string-match-p "<down-mouse-" keys)
                             (string-match-p "<drag-mouse-" keys))
-                  ;; Only log keys starting with C- or M-
                   (when (or (string-prefix-p "C-" keys)
                             (string-prefix-p "M-" keys))
                     (let ((timestamp (format-time-string "%Y-%m-%d %H:%M:%S")))
