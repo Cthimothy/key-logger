@@ -29,8 +29,6 @@
           (remove-hook 'post-command-hook hook-symbol)
           (message "Key logging stopped."))
       (add-hook 'post-command-hook hook-symbol)
-      (message "Key logging started in *Key Log*"))))
+      (message "Key logging started in *Key Log*")))))
 
-
-
-
+(provide 'tw/key-logger-toggle)
